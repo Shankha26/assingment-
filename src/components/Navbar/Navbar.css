@@ -25,6 +25,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  position: relative;
 }
 
 .logo {
@@ -39,6 +40,9 @@
   display: flex;
   gap: 32px;
   align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-link {
@@ -64,43 +68,34 @@
   width: 100%;
 }
 
-.nav-action {
+.navbar-hamburger-toggle {
   display: block;
-}
-
-.btn-login {
-  background-color: transparent;
-  color: var(--color-primary);
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  padding: 10px 24px;
-  border-radius: 9999px;
-  font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-  transition: var(--transition-smooth);
-}
-
-.btn-login:hover {
-  background-color: var(--color-primary);
-  color: #ffffff;
-  border-color: var(--color-primary);
-}
-
-.mobile-toggle {
-  display: none;
   background: none;
   border: none;
   color: var(--color-primary);
   cursor: pointer;
   z-index: 1100;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
 }
 
-/* Mobile Drawer */
+.navbar-hamburger-toggle:hover {
+  opacity: 0.7;
+}
+
+.custom-hamburger-icon {
+  display: block;
+}
+
+/* Mobile/Desktop Drawer */
 .mobile-drawer {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 100%;
+  width: 320px;
   height: 100vh;
   background-color: #ffffff;
   z-index: 1050;
@@ -109,6 +104,7 @@
   justify-content: center;
   align-items: center;
   transition: var(--transition-smooth);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
 }
 
 .mobile-drawer.open {
@@ -119,13 +115,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 28px;
   width: 100%;
 }
 
 .mobile-link {
   font-family: var(--font-heading);
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
   color: var(--color-primary);
   transition: var(--transition-fast);
@@ -135,26 +131,12 @@
   color: var(--color-accent-purple);
 }
 
-.btn-login-mobile {
-  margin-top: 16px;
-  background-color: var(--color-primary);
-  color: #ffffff;
-  border: none;
-  padding: 14px 48px;
-  border-radius: 9999px;
-  font-weight: 600;
-  font-size: 16px;
-  width: 200px;
-  text-align: center;
-  cursor: pointer;
-}
-
 @media (max-width: 768px) {
-  .nav-links, .nav-action {
+  .nav-links {
     display: none;
   }
 
-  .mobile-toggle {
-    display: block;
+  .mobile-drawer {
+    width: 100%;
   }
 }

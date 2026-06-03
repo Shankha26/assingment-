@@ -45,14 +45,14 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <h1 className="hero-heading">
-            The <span className="highlight-underline-yellow">thinkers and doers</span><br />
-            were <span className="highlight-pill-pink">changing</span><br className="mobile-only-break" />
+            The <span className="highlight-underline-yellow">thinkers and</span><br />
+            doers were <span className="highlight-pill-pink">changing</span><br />
             the <span className="highlight-pill-green">status</span> Quo with
           </h1>
           
           <p className="hero-subheading">
-            We are a team of strategists, designers and developers. Together,<br className="desktop-only-break" />
-            we solve the tough issues, fighting alongside you, and making things work.
+            We are a team of strategists, designers communicators, researchers. Togeather,<br className="desktop-only-break" />
+            we belive that progress only hghappens when you refuse to play things safe.
           </p>
         </motion.div>
 

@@ -28,35 +28,37 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <div className="nav-links">
           <a href="#home" className="nav-link">Home</a>
-          <a href="#creator" className="nav-link">Creator</a>
+          <a href="#studio" className="nav-link">Studio</a>
           <a href="#services" className="nav-link">Services</a>
           <a href="#contact" className="nav-link">Contact</a>
-          <a href="#faq" className="nav-link">FAQ</a>
+          <a href="#faq" className="nav-link">FAQ's</a>
         </div>
 
-        <div className="nav-action">
-          <button className="btn-login">Login</button>
-        </div>
-
-        {/* Mobile menu toggle */}
+        {/* Hamburger Menu Toggle (Visible on both desktop & mobile matching screenshot 1) */}
         <button 
-          className="mobile-toggle"
+          className="navbar-hamburger-toggle"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? (
+            <X size={26} strokeWidth={1.5} />
+          ) : (
+            <svg width="24" height="14" viewBox="0 0 24 14" fill="none" className="custom-hamburger-icon">
+              <line y1="1" x2="24" y1="1" stroke="#111111" strokeWidth="2" />
+              <line y1="13" x2="24" y1="13" stroke="#111111" strokeWidth="2" />
+            </svg>
+          )}
         </button>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile/Desktop Drawer Menu */}
       <div className={`mobile-drawer ${isOpen ? 'open' : ''}`}>
         <div className="mobile-links">
           <a href="#home" className="mobile-link" onClick={() => setIsOpen(false)}>Home</a>
-          <a href="#creator" className="mobile-link" onClick={() => setIsOpen(false)}>Creator</a>
+          <a href="#studio" className="mobile-link" onClick={() => setIsOpen(false)}>Studio</a>
           <a href="#services" className="mobile-link" onClick={() => setIsOpen(false)}>Services</a>
           <a href="#contact" className="mobile-link" onClick={() => setIsOpen(false)}>Contact</a>
-          <a href="#faq" className="mobile-link" onClick={() => setIsOpen(false)}>FAQ</a>
-          <button className="btn-login-mobile" onClick={() => setIsOpen(false)}>Login</button>
+          <a href="#faq" className="mobile-link" onClick={() => setIsOpen(false)}>FAQ's</a>
         </div>
       </div>
     </nav>
