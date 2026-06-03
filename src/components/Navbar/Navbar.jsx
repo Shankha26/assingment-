@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { X } from 'lucide-react';
 import './Navbar.css';
 
 export default function Navbar() {
@@ -34,7 +34,7 @@ export default function Navbar() {
           <a href="#faq" className="nav-link">FAQ's</a>
         </div>
 
-        {/* Hamburger Menu Toggle (Visible on both desktop & mobile matching screenshot 1) */}
+        {/* Hamburger Menu Toggle (Three horizontal lines matching design) */}
         <button 
           className="navbar-hamburger-toggle"
           onClick={() => setIsOpen(!isOpen)}
@@ -43,9 +43,10 @@ export default function Navbar() {
           {isOpen ? (
             <X size={26} strokeWidth={1.5} />
           ) : (
-            <svg width="24" height="14" viewBox="0 0 24 14" fill="none" className="custom-hamburger-icon">
+            <svg width="24" height="18" viewBox="0 0 24 18" fill="none" className="custom-hamburger-icon">
               <line y1="1" x2="24" y1="1" stroke="#111111" strokeWidth="2" />
-              <line y1="13" x2="24" y1="13" stroke="#111111" strokeWidth="2" />
+              <line y1="9" x2="24" y1="9" stroke="#111111" strokeWidth="2" />
+              <line y1="17" x2="24" y1="17" stroke="#111111" strokeWidth="2" />
             </svg>
           )}
         </button>
