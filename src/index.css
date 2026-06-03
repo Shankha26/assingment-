@@ -1,0 +1,183 @@
+:root {
+  /* Fonts */
+  --font-heading: 'Syne', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  /* Colors */
+  --color-primary: #111111;
+  --color-text-dark: #1E1E1E;
+  --color-text-muted: #555555;
+  --color-bg: #ffffff;
+  --color-bg-alt: #fcfcfc;
+  
+  /* Highlighter Accent Colors */
+  --color-pink-highlighter: #ffd2e5;
+  --color-green-highlighter: #d2f4e1;
+  --color-yellow-line: #ffc75f;
+  --color-light-green-bg: #e2f1e7;
+  
+  /* Decorative Accents */
+  --color-accent-purple: #9035ff;
+  --color-accent-red: #ff5252;
+  
+  /* Box Shadow */
+  --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.03);
+
+  /* Transitions */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.15s ease-out;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+button, input {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+/* Custom Highlight Classes mimicking the Figma drawings */
+.highlight-container {
+  display: inline;
+  position: relative;
+  z-index: 1;
+}
+
+/* Rounded highlight pill background */
+.highlight-pill-pink {
+  position: relative;
+  z-index: 1;
+  padding: 2px 16px;
+  background-color: var(--color-pink-highlighter);
+  border-radius: 9999px;
+  display: inline-block;
+  line-height: 1;
+}
+
+.highlight-pill-green {
+  position: relative;
+  z-index: 1;
+  padding: 2px 16px;
+  background-color: var(--color-green-highlighter);
+  border-radius: 9999px;
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Underline brushes */
+.highlight-underline-yellow {
+  position: relative;
+  white-space: nowrap;
+}
+
+.highlight-underline-yellow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-yellow-line);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+/* Layout Containers */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 12px 30px;
+  border-radius: 9999px;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  background-color: #222222;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  padding: 12px 30px;
+  border-radius: 9999px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Floating shape defaults */
+.floating-shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Scroll reveal style fixes */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
