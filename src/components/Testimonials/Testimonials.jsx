@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import './Testimonials.css';
 
@@ -51,22 +50,24 @@ export default function Testimonials() {
         {/* Central Quote Card & Surrounding Avatars */}
         <div className="testimonials-card-wrapper">
           
-          {/* Render floating avatars */}
-          {floatingAvatars.map((avatar, idx) => (
-            <motion.div
-              key={idx}
-              className={`testimonial-avatar-wrapper ${avatar.class}`}
-              variants={floatAnimation}
-              animate="animate"
-              custom={idx}
-              style={{
-                transition: "transform 0.3s ease"
-              }}
-              whileHover={{ scale: 1.15, zIndex: 10 }}
-            >
-              <img src={avatar.src} alt={`Customer ${idx + 1}`} className="testimonial-avatar-img" />
-            </motion.div>
-          ))}
+          {/* Grouped container for floating/responsive avatars */}
+          <div className="testimonials-avatars-group">
+            {floatingAvatars.map((avatar, idx) => (
+              <motion.div
+                key={idx}
+                className={`testimonial-avatar-wrapper ${avatar.class}`}
+                variants={floatAnimation}
+                animate="animate"
+                custom={idx}
+                style={{
+                  transition: "transform 0.3s ease"
+                }}
+                whileHover={{ scale: 1.15, zIndex: 10 }}
+              >
+                <img src={avatar.src} alt={`Customer ${idx + 1}`} className="testimonial-avatar-img" />
+              </motion.div>
+            ))}
+          </div>
 
           {/* Central Card */}
           <motion.div 

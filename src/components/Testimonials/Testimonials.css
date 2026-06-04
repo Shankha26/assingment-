@@ -72,6 +72,16 @@
   right: 20px;
 }
 
+.testimonials-avatars-group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+}
+
 /* Floating Avatars */
 .testimonial-avatar-wrapper {
   position: absolute;
@@ -81,7 +91,7 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   background-color: #f5f5f5;
   cursor: pointer;
-  z-index: 4;
+  pointer-events: auto;
 }
 
 .testimonial-avatar-img {
@@ -187,9 +197,43 @@
     font-size: 32px;
   }
 
+  .testimonials-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
   .testimonials-card {
     padding: 40px 24px;
     border-radius: 24px;
+    order: 1;
+  }
+
+  .testimonials-avatars-group {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    pointer-events: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    order: 2;
+  }
+
+  .testimonial-avatar-wrapper {
+    position: static !important;
+    width: 50px !important;
+    height: 50px !important;
+    transform: none !important;
+    pointer-events: auto;
+  }
+
+  .test-avatar-2, .test-avatar-4, .test-avatar-6, .test-avatar-7 {
+    display: inline-block !important;
   }
 
   .testimonial-quote {
@@ -208,27 +252,5 @@
   .quote-right {
     bottom: -50px;
     right: 10px;
-  }
-
-  /* Flex avatars container on mobile instead of absolute float */
-  .testimonial-avatar-wrapper {
-    position: static !important;
-    display: inline-block;
-    width: 50px !important;
-    height: 50px !important;
-    margin: 6px;
-    transform: none !important;
-  }
-
-  .testimonials-card-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  /* Wrap avatars in a neat row at the bottom on mobile */
-  .testimonials-card-wrapper::after {
-    content: none;
   }
 }
